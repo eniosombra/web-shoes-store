@@ -1,11 +1,67 @@
 import React from 'react';
+import {
+  MdRemoveCircleOutline,
+  MdAddCircleOutline,
+  MdDelete,
+} from 'react-icons/md';
 
-// import { Container } from './styles';
+import { Container, ProductTable, Total } from './styles';
 
 export default function Cart() {
   return (
-    <div>
-      <p>CART</p>
-    </div>
+    <Container>
+      <ProductTable>
+        <thead>
+          <tr>
+            <th />
+            <th>PRODUTO</th>
+            <th>QTD</th>
+            <th>SUBTOTAL</th>
+            <th />
+          </tr>
+        </thead>
+        <tbody>
+          <td>
+            <img
+              src="https://static.netshoes.com.br/produtos/tenis-asics-gel-cumulus-20-masculino/50/D18-2796-450/D18-2796-450_detalhe2.jpg?ims=326x"
+              alt="tênis"
+            />
+          </td>
+          <td>
+            <strong>Tênis muito massa</strong>
+            <span>R$129,90</span>
+          </td>
+
+          <td>
+            <div>
+              <button type="button">
+                <MdRemoveCircleOutline size={20} color="#0078d4" />
+              </button>
+
+              <input type="number" readOnly value={1} />
+
+              <button type="button">
+                <MdAddCircleOutline size={20} color="#0078d4" />
+              </button>
+            </div>
+          </td>
+          <td>
+            <strong>R$258,80</strong>
+          </td>
+          <button type="button">
+            <MdDelete size={20} color="#0078d4" />
+          </button>
+        </tbody>
+      </ProductTable>
+
+      <footer>
+        <button type="button">Finalizar pedido</button>
+
+        <Total>
+          <span>TOTAL</span>
+          <strong>R$ 1920,28</strong>
+        </Total>
+      </footer>
+    </Container>
   );
 }
